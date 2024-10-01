@@ -4419,6 +4419,15 @@ var $elm$virtual_dom$VirtualDom$toHandlerInt = function (handler) {
 			return 3;
 	}
 };
+var $author$project$PhotoGroove$initialModel = {
+	photos: _List_fromArray(
+		[
+			{url: '1.jpeg'},
+			{url: '2.jpeg'},
+			{url: '3.jpeg'}
+		]),
+	selectedUrl: '1.jpeg'
+};
 var $elm$json$Json$Encode$string = _Json_wrap;
 var $elm$html$Html$Attributes$stringProperty = F2(
 	function (key, string) {
@@ -4431,13 +4440,6 @@ var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('
 var $elm$html$Html$div = _VirtualDom_node('div');
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
 var $elm$html$Html$Attributes$id = $elm$html$Html$Attributes$stringProperty('id');
-var $elm$html$Html$img = _VirtualDom_node('img');
-var $elm$html$Html$Attributes$src = function (url) {
-	return A2(
-		$elm$html$Html$Attributes$stringProperty,
-		'src',
-		_VirtualDom_noJavaScriptOrHtmlUri(url));
-};
 var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
 var $author$project$PhotoGroove$view = function (model) {
@@ -4462,31 +4464,8 @@ var $author$project$PhotoGroove$view = function (model) {
 					[
 						$elm$html$Html$Attributes$id('thumbnails')
 					]),
-				_List_fromArray(
-					[
-						A2(
-						$elm$html$Html$img,
-						_List_fromArray(
-							[
-								$elm$html$Html$Attributes$src('http://elm-in-action.com/1.jpeg')
-							]),
-						_List_Nil),
-						A2(
-						$elm$html$Html$img,
-						_List_fromArray(
-							[
-								$elm$html$Html$Attributes$src('http://elm-in-action.com/2.jpeg')
-							]),
-						_List_Nil),
-						A2(
-						$elm$html$Html$img,
-						_List_fromArray(
-							[
-								$elm$html$Html$Attributes$src('http://elm-in-action.com/3.jpeg')
-							]),
-						_List_Nil)
-					]))
+				_List_Nil)
 			]));
 };
-var $author$project$PhotoGroove$main = $author$project$PhotoGroove$view('no model yet');
+var $author$project$PhotoGroove$main = $author$project$PhotoGroove$view($author$project$PhotoGroove$initialModel);
 _Platform_export({'PhotoGroove':{'init':_VirtualDom_init($author$project$PhotoGroove$main)(0)(0)}});}(this));
