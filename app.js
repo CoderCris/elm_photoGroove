@@ -4426,7 +4426,7 @@ var $author$project$PhotoGroove$initialModel = {
 			{url: '2.jpeg'},
 			{url: '3.jpeg'}
 		]),
-	selectedUrl: '2.jpeg'
+	selectedUrl: '1.jpeg'
 };
 var $elm$json$Json$Encode$string = _Json_wrap;
 var $elm$html$Html$Attributes$stringProperty = F2(
@@ -4595,8 +4595,7 @@ var $author$project$PhotoGroove$view = function (model) {
 				_List_fromArray(
 					[
 						$elm$html$Html$Attributes$class('large'),
-						$elm$html$Html$Attributes$src(
-						_Utils_ap($author$project$PhotoGroove$urlPrefix, model.selectedUrl))
+						$elm$html$Html$Attributes$src($author$project$PhotoGroove$urlPrefix + ('/large' + model.selectedUrl))
 					]),
 				_List_Nil)
 			]));

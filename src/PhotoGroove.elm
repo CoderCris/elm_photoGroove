@@ -10,8 +10,11 @@ view model =
         [ h1 [] [ text "Photo Groove" ]
         , div [ id "thumbnails" ] 
             (List.map 
-                (viewThumbnail model.selectedUrl)
-                 model.photos)
+                (\photo -> viewThumbnail model.selectedUrl photo)
+                model.photos
+            )              
+--                (viewThumbnail model.selectedUrl)
+--                 model.photos)
         , img [class "large", src (urlPrefix ++ "/large" ++ model.selectedUrl)] []
         ]
 
@@ -24,7 +27,7 @@ initialModel =
         , { url = "2.jpeg" }
         , { url = "3.jpeg" }
         ]
-    , selectedUrl = "2.jpeg"
+    , selectedUrl = "1.jpeg"
     }
 
 update msg model =
