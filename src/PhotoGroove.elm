@@ -8,8 +8,11 @@ urlPrefix = "http://elm-in-action.com/"
 view model =
     div [ class "content"]
         [ h1 [] [ text "Photo Groove" ]
-        , div [ id "thumbnails" ] (List.map (\photo -> viewThumbnail model.selectedUrl photo) model.photos)
-        , img [class "large", src (urlPrefix ++ model.selectedUrl)] []
+        , div [ id "thumbnails" ] 
+            (List.map 
+                (viewThumbnail model.selectedUrl)
+                 model.photos)
+        , img [class "large", src (urlPrefix ++ "/large" ++ model.selectedUrl)] []
         ]
 
 viewThumbnail selectedUrl thumb =
@@ -23,6 +26,12 @@ initialModel =
         ]
     , selectedUrl = "2.jpeg"
     }
+
+update msg model =
+    if msg.description == "ClickedPhoto" then
+        { model | selectedUrl = msg.data }
+    else 
+        model
 
 main =
     view initialModel
